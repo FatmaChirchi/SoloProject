@@ -7,7 +7,7 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #04AA6D;
+    background-color: #aa7004;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -19,4 +19,109 @@
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  #landingPageCat{
+    height: 300px;;
+    width:300px
+  }
+  #feedButton{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #aa7004;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    text-align: center;
+    align-items: center
+  }
+  #feedButton:hover {background-color: #3e8e41}
+  
+  #feedButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  #sleepButton{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #aa7004;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  #sleeButton:hover {background-color: #3e8e41}
+  
+  #sleepButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  #petButton{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #aa7004;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+    #petButton:hover {
+      background-color: #3e8e41}
+  
+  #petButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  #tiredness{
+    text-align: center;
+  }
+  #Happiness{
+    text-align: center;
+  }
+  #hunger{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+
+  }
+  #startgamepage{
+    max-width: 500px;
+    margin: auto;
+  }
+  #CatName{
+    padding: 20px 25px;
+     align-items: center;
+     justify-content: center;
+     background-color: white;
+  }
+  body{
+    max-width: 700px;
+    margin: auto;
+  }
+  body {
+    background-image: url("https://img.freepik.com/premium-vector/living-room-with-couch-pictures-wall-vector-art-illustration_9493-84340.jpg?w=1060"), url("paper.gif");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }

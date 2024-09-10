@@ -1,10 +1,10 @@
 function Cat(name) {
     var cats = {};
     cats.name = name;
-    cats.tiredness = Math.floor(Math.random() * 101);
-    cats.hunger = Math.floor(Math.random() * 101);
-    cats.loneliess = Math.floor(Math.random() * 101);
-    cats.happiness = Math.floor(Math.random() * 101);
+    cats.tiredness = Math.floor(Math.random() * 11);
+    cats.hunger = Math.floor(Math.random() * 11);
+    cats.loneliess = Math.floor(Math.random() * 11);
+    cats.happiness = Math.floor(Math.random() * 11);
     cats.feed = feed;
     cats.pet = pet;
     cats.sleep = sleep;
@@ -13,7 +13,7 @@ function Cat(name) {
 
 
 const feed = function () {
-    if (this.hunger > 50) {
+    if (this.hunger > 5) {
         this.happiness++;
         this.hunger--;
         return this.name + " done eating";
@@ -23,12 +23,12 @@ const feed = function () {
 };
 
 const pet = function () {
-    if (this.happiness < 50) {
+    if (this.happiness < 5) {
         this.happiness++;
-        if (this.loneliess < 100 && this.loneliess > 50) {
+        if (this.loneliess < 10 && this.loneliess > 5) {
             this.loneliess--;
         }
-        if (this.tiredness > 0 && this.tiredness < 50) {
+        if (this.tiredness > 0 && this.tiredness < 5) {
             this.tiredness++;
         }
         return this.name + " is happy";
@@ -37,7 +37,7 @@ const pet = function () {
 };
 
 const sleep = function () {
-    if (this.hunger === 0 || this.tiredness > 50) {
+    if (this.hunger === 0 || this.tiredness > 5) {
         this.happiness++;
         this.hunger++;
         this.tiredness--;
@@ -53,7 +53,6 @@ cat.sleep()
 cat.pet()
 let CatName = "sasa"
 let YourCat
-let loopToChangeCatStatus
 
 $("body").append('<div id="startgamepage"></div>')
 
@@ -76,32 +75,60 @@ $(document).ready(function () {
         $("#startgamepage").empty()
         $("#GameName").hide()
         $("#firstGamePage").append(CatN)
-        $("#firstGamePage").append('<button id="feedButton">Feed your cat</button>')
-        $("#firstGamePage").append('<button id="petButton">Pet your cat</button>')
-        $("#firstGamePage").append('<button id="sleepButton">Put your cat to sleep</button>')
         $("#firstGamePage").append(`<img id="landingPageCat" src="./images/happycat.webp">`)
+        $("#firstGamePage").append(`<p>Tiredness: <h4 id="tiredness"> </h4></p>
+                                    <p>Happiness: <h4 id="Happiness"> </h4></p>
+                                    <p>Hunger: <h4 id="hunger"> </h4></p>`)
+        $("#firstGamePage").append(`<button id="feedButton">Feed your cat</button>
+                                    <button id="petButton">Pet your cat</button>
+                                    <button id="sleepButton">Put your cat to sleep</button>
+                                    
+                                    
+`
+        )
+
+        
+
+
+
 
         YourCat = Cat(CatName)
         console.log(YourCat)
         
 $("#sleepButton").on("click",function(){
     $("#landingPageCat").attr('src','./images/sleepingcat.webp')
+    
     YourCat.sleep()
-
+    setTimeout(function(){
+        alert("You won!")
+    },5000)
+    var audio = $('#meow')[0];
+    audio.play()
 
 })
 $("#feedButton").on("click",function(){
-    $("#landingPageCat").attr('src','./images/hungrycat.webp')
+    $("#landingPageCat").attr('src','./images/hungrycat1.gif')
+    
     YourCat.feed()
+    setTimeout(function(){
+        alert("I'm no longer hungry!")
 
+    },5000)
+    var audio = $('#meow')[0];
+    audio.play()
 })
 
 $("#petButton").on("click",function(){
+   
     $("#landingPageCat").attr('src','./images/happycat.webp')
+    
     YourCat.pet()
-
+    setTimeout(function()
+    {alert("Now! I am happy!")
+    },5000)
 })
-
+var audio = $('#meow')[0];
+    audio.play()
     })
 
         $("#feedButton").on("click",function(){
@@ -165,12 +192,6 @@ changeCatStatus()
 
 
 
-function disableButtons() {
-    $('#feedButton').prop('disabled', YourCat.sleep)
-    $('#petButton').prop('disabled', YourCat.sleep)
-    $('#sleepButton').prop('disabled', YourCat.sleep)
-}
-disableButtons()
 
 
 
@@ -192,11 +213,3 @@ disableButtons()
 
 
 
-$("#CatName").css({ "padding": "15px 25px", "align-items": "center", "justify-content": "center" })
-$("#GameName").css({ "text-align": "center", "background-color": "lightorange" })
-$("#startgame").css({
-    "display": "inline-block", "cursor": "pointer", "padding": "15px 25px", "text-align": "center",
-    "color": "#fff", "background-color": "#aa6a04", "border-radius": "15px", "border-radius": "15px 15px #aa0404", "box-shadow": "0 9px #999"
-})
-$("#catpage1").css({ "align-items": "center" })
-$("#greeting cat").css({ "text-align": "center" })
