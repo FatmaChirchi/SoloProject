@@ -126,10 +126,11 @@ $("#petButton").on("click",function(){
     setTimeout(function()
     {alert("Now! I am happy!")
     },5000)
-})
-var audio = $('#meow')[0];
+    var audio = $('#meow')[0];
     audio.play()
     })
+})
+
 
         $("#feedButton").on("click",function(){
             YourCat.feed()
@@ -152,15 +153,15 @@ var audio = $('#meow')[0];
 
 function changeCatImage(){
   
-    if(YourCat.happiness<50){
+    if(YourCat.happiness<5){
 $("#landingPageCat").attr('src','./images/sadcat.webp')
 
     }
-    if(YourCat.hunger>=50){
+    if(YourCat.hunger>=5){
         $("#landingPageCat").attr('src','./images/hungrycat.webp')
         YourCat.feed()
     }
-    if(YourCat.tiredness>=50){
+    if(YourCat.tiredness>=5){
         $("#landingPageCat").attr('src','./images/tiredcat.webp')
     }
     else "your cat is happy" 
